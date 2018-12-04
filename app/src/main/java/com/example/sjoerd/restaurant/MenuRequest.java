@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class MenuRequest implements Response.Listener<JSONObject>, Response.ErrorListener {
 
     private Context context;
+    private String category_name;
     private ArrayList<MenuItem> menuItems = new ArrayList<>();
     Callback activity;
 
@@ -28,8 +29,9 @@ public class MenuRequest implements Response.Listener<JSONObject>, Response.Erro
     }
 
     // constructor
-    public MenuRequest(Context c) {
+    public MenuRequest(Context c, String cat_name) {
         this.context = c;
+        this.category_name = cat_name;
     }
 
     @Override
@@ -64,7 +66,7 @@ public class MenuRequest implements Response.Listener<JSONObject>, Response.Erro
 
     void getMenus(Callback act) {
         this.activity = act;
-        String url = "https://resto.mprog.nl/menu?category=entrees";
+        String url = "https://resto.mprog.nl/menu?category=" + category_name;
 
         RequestQueue queue = Volley.newRequestQueue(context);
 
