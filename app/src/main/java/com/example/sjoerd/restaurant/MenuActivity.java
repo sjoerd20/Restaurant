@@ -3,6 +3,8 @@ package com.example.sjoerd.restaurant;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -32,10 +34,22 @@ public class MenuActivity extends AppCompatActivity implements MenuRequest.Callb
         MenuAdapter adapter = new MenuAdapter(this, R.layout.menu_item, menuItems);
         ListView listView = findViewById(R.id.menuListView);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new OnItemClickListener());
     }
 
     @Override
     public void gotMenusError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+
+    private class OnItemClickListener implements AdapterView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            MenuItem menuItem = (MenuItem) parent.getItemAtPosition(position);
+            Intent intent = new Intent(MenuActivity.this, MenuItemActivity.class);
+            intent.putExtra("menu_item", menuItem);
+            startActivity(intent);
+        }
     }
 }
