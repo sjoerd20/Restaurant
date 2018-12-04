@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 public class CategoriesActivity extends AppCompatActivity implements CategoriesRequest.Callback {
 
+    private String categories[] = {"appetizers", "entrees"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +33,7 @@ public class CategoriesActivity extends AppCompatActivity implements CategoriesR
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Intent intent = new Intent(CategoriesActivity.this, MenuActivity.class);
-            intent.putExtra("category_name", view.getId());
+            intent.putExtra("category_name", categories[position]);
             startActivity(intent);
         }
     }
