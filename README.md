@@ -8,6 +8,6 @@ This app implements a menu app for a restaurant. Users can see all the menu's wi
 
 ## Screenshots
 
-![category selection screen](doc/doc1.PNG)
-![all menu's in a category screen](doc/doc2.PNG)
-![details of each menu](doc/doc3.PNG)
+![category selection screen](doc/categoryScreen.PNG)
+![all menu's in a category screen](menuItemsScreen/doc2.PNG)
+![details of each menu](doc/menuDetailScreen.PNG)
