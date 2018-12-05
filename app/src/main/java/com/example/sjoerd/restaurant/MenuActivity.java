@@ -23,12 +23,10 @@ public class MenuActivity extends AppCompatActivity implements MenuRequest.Callb
 
         MenuRequest x = new MenuRequest(this, retrievedCategory);
         x.getMenus(this);
-        Toast.makeText(this, retrievedCategory, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void gotMenus(ArrayList<MenuItem> menuItems) {
-        Toast.makeText(this, "some menu's", Toast.LENGTH_LONG).show();
 
         // instantiate MenuAdapter
         MenuAdapter adapter = new MenuAdapter(this, R.layout.menu_item, menuItems);

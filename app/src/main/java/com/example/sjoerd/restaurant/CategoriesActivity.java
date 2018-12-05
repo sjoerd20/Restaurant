@@ -26,7 +26,6 @@ public class CategoriesActivity extends AppCompatActivity implements CategoriesR
 
         CategoriesRequest x = new CategoriesRequest(this);
         x.getCategories(this);
-        Toast.makeText(this, "started", Toast.LENGTH_SHORT).show();
     }
 
     private class OnItemClickListener implements AdapterView.OnItemClickListener {
@@ -40,7 +39,6 @@ public class CategoriesActivity extends AppCompatActivity implements CategoriesR
 
     @Override
     public void gotCategories(ArrayList<String> categories) {
-        Toast.makeText(this, categories.get(0), Toast.LENGTH_LONG).show();
 
         // create simple array adapter
         ArrayAdapter<String> categoriesAdapter = new ArrayAdapter<String>(this,
