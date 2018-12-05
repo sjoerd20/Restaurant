@@ -37,9 +37,8 @@ public class MenuAdapter extends ArrayAdapter<MenuItem> {
         // get current menu
         MenuItem menuItem = menuItems.get(position);
 
-        // draw image
+        // draw image with picasso
         ImageView image = convertView.findViewById(R.id.imageView);
-//        Drawable imageDrawable = getContext().getResources().getDrawable(menuItem);
         Picasso.with(getContext()).load(menuItem.getImageURL()).into(image);
 
         TextView titleView = convertView.findViewById(R.id.titleView);
