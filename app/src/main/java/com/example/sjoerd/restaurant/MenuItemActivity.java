@@ -30,8 +30,9 @@ public class MenuItemActivity extends AppCompatActivity {
         TextView priceView = findViewById(R.id.menuPriceView);
         TextView descriptionView = findViewById(R.id.menuDescriptionView);
 
+        String priceText = "€" + String.valueOf(retrievedMenu.getPrice());
+        priceView.setText(priceText);
         titleView.setText(retrievedMenu.getName());
-        priceView.setText(String.valueOf(retrievedMenu.getPrice()));
         descriptionView.setText(retrievedMenu.getDescription());
     }
 }

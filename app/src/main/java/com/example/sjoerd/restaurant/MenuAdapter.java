@@ -46,7 +46,8 @@ public class MenuAdapter extends ArrayAdapter<MenuItem> {
         TextView priceView = convertView.findViewById(R.id.priceView);
 
         titleView.setText(menuItem.getName());
-        priceView.setText(String.valueOf(menuItem.getPrice()));
+        String priceText = "€" + String.valueOf(menuItem.getPrice());
+        priceView.setText(priceText);
 
         return convertView;
     }
